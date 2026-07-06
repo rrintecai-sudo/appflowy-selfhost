@@ -1,0 +1,6 @@
+# Nunca versionar secretos
+.env
+*.env
+!example.env
+secrets*
+nginx/ssl/
