@@ -144,6 +144,8 @@ services:
     environment:
       - APPFLOWY_GOTRUE_BASE_URL=${APPFLOWY_GOTRUE_BASE_URL:-http://gotrue:9999}
       - APPFLOWY_BASE_URL=${APPFLOWY_ADMIN_FRONTEND_BASE_URL:-http://appflowy_cloud:8000}
+      # Origen público del navegador; sin esto Next.js rechaza la sesión tras el proxy (bucle de login)
+      - APPFLOWY_ALLOWED_ORIGINS=${APPFLOWY_ALLOWED_ORIGINS}
     depends_on:
       gotrue:
         condition: service_healthy
